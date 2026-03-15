@@ -1,22 +1,28 @@
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('../static/RobotoSlab-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 100 900;
+}
 body {
-    font-family: 'Roboto', serif;
+    font-family: 'Roboto Slab', serif;
     font-size: 2vmax;
     color: #FDC116;
     background-color: #003F87;
     display: flex;
 }
-@media screen and (min-width: 80rem) {
-    .container {
-        background-color: #D6CEBD;
-        margin: 1em 2em;
-        column-count: 2;
-    }
+body > div {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 @media (orientation: landscape) {
     body {
         flex-direction: row;
     }
-    div {
+    body > div {
         width: 40%;
         height: 80%;
     }
@@ -26,7 +32,7 @@ body {
         flex-direction: column;
         align-items: center;
     }
-    div {
+    body > div {
         width: 80%;
         height: 40%;
     }
@@ -62,12 +68,11 @@ a:active {
 }
 .pack-container {
     display: flex;
-    flex-wrap: wrap; /* This allows the boxes to drop to the next line on mobile */
-    gap: 5px;       /* Adds space between the two columns */
+    flex-direction: column;
+    gap: 5px;       /* Adds space between the boxes */
+    overflow-y: auto;
 }
 .pack-box {
-    flex: 1 1 300px; /* This is the key: grow/shrink, but try to stay at least 300px wide */
     padding: 5px;
-    /*border: 1px solid #ccc; !* Optional: adds a border around each troop *!*/
     box-sizing: border-box;
 }

@@ -1,16 +1,22 @@
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('../static/RobotoSlab-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 100 900;
+}
 body {
-    font-family: 'Roboto';
+    font-family: 'Roboto Slab', serif;
     font-size: 2vmax;
     background-color: #D6CEBD;
     color: #243E2C;
     display: flex;
 }
-@media screen and (min-width: 80rem) {
-  .container {
-    background-color: #D6CEBD;
-    margin: 1em 2em;
-    column-count: 2;
-  }
+body > div {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 img {
     display: block;
@@ -21,21 +27,11 @@ img {
     margin-top: auto;
     margin-bottom: auto;
 }
-div {
-    text-align: center;
-    display: block;
-    width: 40%;
-    height: 40%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-}
 @media (orientation: landscape) {
     body {
         flex-direction: row;
     }
-    div {
+    body > div {
         width: 40%;
         height: 80%;
     }
@@ -45,14 +41,10 @@ div {
         flex-direction: column;
         align-items: center;
     }
-    div {
+    body > div {
         width: 80%;
         height: 40%;
     }
-}
-h1 {
-    font-size: 3vmax;
-    text-align: center;
 }
 a:link {
     color: #515354;
@@ -76,12 +68,11 @@ a:active {
 }
 .troop-container {
     display: flex;
-    flex-wrap: wrap; /* This allows the boxes to drop to the next line on mobile */
-    gap: 10px;       /* Adds space between the two columns */
+    flex-direction: column;
+    gap: 10px;       /* Adds space between the boxes */
+    overflow-y: auto;
 }
 .troop-box {
-    flex: 1 1 300px; /* This is the key: grow/shrink, but try to stay at least 300px wide */
     padding: 10px;
-    /*border: 1px solid #ccc; !* Optional: adds a border around each troop *!*/
     box-sizing: border-box;
 }
