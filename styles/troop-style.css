@@ -74,3 +74,14 @@ a:active {
     background-color: transparent;
     text-decoration: underline;
 }
+.troop-container {
+    display: flex;
+    flex-wrap: wrap; /* This allows the boxes to drop to the next line on mobile */
+    gap: 10px;       /* Adds space between the two columns */
+}
+.troop-box {
+    flex: 1 1 300px; /* This is the key: grow/shrink, but try to stay at least 300px wide */
+    padding: 10px;
+    /*border: 1px solid #ccc; !* Optional: adds a border around each troop *!*/
+    box-sizing: border-box;
+}
