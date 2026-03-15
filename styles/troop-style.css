@@ -9,14 +9,12 @@ body {
     background-color: #D6CEBD;
     color: #243E2C;
     display: flex;
+    margin: 0;
+    justify-content: center;
 }
 body > div {
     text-align: center;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
 }
 img {
     display: block;
@@ -30,10 +28,21 @@ img {
 @media (orientation: landscape) {
     body {
         flex-direction: row;
+        align-items: flex-start;
     }
-    body > div {
+    body > div:first-child {
+        position: sticky;
+        top: 0;
         width: 40%;
-        height: 80%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    body > div:last-child {
+        width: 40%;
+        padding-top: 5vh;
+        padding-bottom: 5vh;
     }
 }
 @media (orientation: portrait) {
@@ -43,7 +52,7 @@ img {
     }
     body > div {
         width: 80%;
-        height: 40%;
+        margin: 2vh 0;
     }
 }
 a:link {
